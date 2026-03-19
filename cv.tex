@@ -1,0 +1,179 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Jakub Wiśniewski - Data Science
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,a4paper,sans]{moderncv}
+
+% --- ATS/OCR ---
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{lmodern}
+  \IfFileExists{glyphtounicode.tex}{\input{glyphtounicode}}{}
+  \pdfgentounicode=1
+\else
+  \usepackage{fontspec}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Helvetica}
+  \setsansfont{Helvetica}
+\fi
+
+% ModernCV themes
+\moderncvstyle{casual}
+\moderncvcolor{blue}
+
+% Margins
+\usepackage[scale=0.95, top=0.9cm, bottom=1.7cm, includefoot]{geometry}
+\usepackage{fontawesome5}
+\usepackage{etoolbox}
+\usepackage{needspace}
+
+% Name size
+\renewcommand*{\namefont}{\fontsize{26}{29}\mdseries\upshape}
+\renewcommand*{\titlefont}{\Large\mdseries\upshape}
+\renewcommand*{\addressfont}{\large\mdseries\upshape}
+\renewcommand*{\sectionfont}{\Large\mdseries\upshape}
+
+% Left column width
+\setlength{\hintscolumnwidth}{2.35cm}
+
+% Reduce title spacing
+\patchcmd{\makecvtitle}{\addverticalspace{3em}}{\addverticalspace{0.8em}}{}{}
+
+% Itemize tuning
+\usepackage{enumitem}
+\setlist[itemize]{noitemsep, topsep=0pt, parsep=0pt, partopsep=0pt, leftmargin=*}
+
+% Compact project links
+\newcommand{\projectlink}[2]{\hspace{0.35em}{\footnotesize\href{#1}{[#2]}}}
+
+% --- Personal data ---
+\firstname{Jakub}
+\familyname{Wiśniewski}
+\address{Ingolstadt}{Germany}
+\mobile{+48 729 114 150}
+\email{jakub.wisniewski.dev@gmail.com}
+
+\extrainfo{%
+    \faLinkedin\ \href{https://www.linkedin.com/in/wis-jak}{linkedin.com/in/wis-jak}%
+    \quad\textbullet\quad%
+    \faGithub\ \href{https://github.com/D3prave}{github.com/D3prave}%
+}
+
+\IfFileExists{pictures/picture.jpg}{
+  \photo[60pt][0.4pt]{pictures/picture}
+}{
+  \IfFileExists{pictures/picture.png}{
+    \photo[60pt][0.4pt]{pictures/picture}
+  }{
+    \IfFileExists{pictures/picture.pdf}{
+      \photo[60pt][0.4pt]{pictures/picture}
+    }{}
+  }
+}
+
+%----------------------------------------------------------------------------------------
+\begin{document}
+\makecvtitle
+\vspace*{-1.1cm}
+
+%----------------------------------------------------------------------------------------
+\needspace{3\baselineskip}
+\section{Profile}
+\cvitem{}{Backend-focused Data Science student with experience across enterprise IT architecture support, research computing, and data-intensive software systems. Strongest interests include backend engineering, analytics workflows, and practical machine learning.}
+
+%----------------------------------------------------------------------------------------
+\section{Education}
+\cventry{2023--09/2026}{Bachelor of Data Science}{Katholische Universität Eichstätt-Ingolstadt}{Ingolstadt}{Expected graduation: Sep 2026}{}
+\cventry{2019--2023}{IT Specialist}{Mikołaj Kopernik Telecommunications Technical School}{Poznań}{}{}
+
+%----------------------------------------------------------------------------------------
+\section{Experience}
+
+\cventry{03/2026--08/2026}{Working Student -- IT Architecture Support}{\textsc{Siemens}}{Germany}{}{%
+\begin{itemize}
+\item Created and maintained solution architecture overviews and related documentation in a large-scale enterprise IT environment.
+\item Assisted with analysis of IT system landscapes and business processes to identify optimization opportunities.
+\item Prepared reports and presentations that supported architecture decision-making and stakeholder communication.
+\item Researched current trends in IT architecture and cloud platforms.
+\end{itemize}}
+
+\cventry{01/2026--04/2026}{Student Assistant}{\textsc{Katholische Universität Eichstätt-Ingolstadt}}{Germany}{}{%
+\begin{itemize}
+\item \textbf{Student research assistant:} Supported the Geography research group with HPC and research workflows on the FAU cluster (Linux/SLURM), including access setup, data transfer, execution support, and troubleshooting.
+\item \textbf{Documentation:} Wrote user-facing guidance for SSH access, remote execution, and cluster usage for non-technical researchers.
+\item \textbf{Conference website:} Developed and helped host and maintain the SampTA conference website, supporting updates and ongoing web operations.
+\end{itemize}}
+
+\cventry{08/2025--10/2025}{Data Science Intern}{\textsc{Kimball Electronics}}{Poland}{}{%
+\begin{itemize}
+\item Supported IT operations and contributed to database development through SQL optimization, triggers, and stored procedures.
+\item Analyzed production-adjacent datasets related to scrap/repair, forecasting, and packaging processes.
+\item Built proof-of-concept ML prototypes, including Repair vs.\ Scrap classification and TopLineForecast.
+\item Designed a proof-of-concept application for Repair vs.\ Scrap predictions and improved processing reliability by refining trigger logic and workflows.
+\item Worked in Agile (Scrum/Kanban) with Azure DevOps/Git and delivered technical presentations to mixed technical and business audiences.
+\end{itemize}}
+
+%----------------------------------------------------------------------------------------
+\needspace{3\baselineskip}
+\section{Skills}
+\cvitem{Programming}{Python, TypeScript, SQL, JavaScript}
+\cvitem{Web}{React, Next.js, Node.js, FastAPI, Flask, REST APIs}
+\cvitem{Data \& ML}{Pandas, NumPy, Scikit-learn, SciPy, Machine Learning, Model Evaluation, Matplotlib, Seaborn, Plotly}
+\cvitem{Data \& Tools}{PostgreSQL, SQL Server, Redis, Docker, AWS, Azure DevOps, HPC (SLURM), PowerBI, ETL Pipelines, Data Warehousing}
+\cvitem{OS}{Linux (Bash, SLES), macOS, Windows}
+\cvitem{Certification}{SLE201 SUSE Linux Enterprise Server Administration (SUSE Academic Training Program, 09/2021)}
+
+%----------------------------------------------------------------------------------------
+\needspace{3\baselineskip}
+\section{Projects}
+
+\cventry{}{PageRank-Based Analysis of Scientific Papers \projectlink{https://github.com/D3prave/DataLab-PageRank}{Code}}{}{}{}{%
+\begin{itemize}
+\item Built a scalable framework for bibliometric analysis using the PageRank algorithm to assess research influence across millions of papers.
+\item Developed a distributed crawler for Semantic Scholar data, implementing robust storage with PostgreSQL and Redis.
+\item Added fault-tolerant task handling and monitoring to support large-scale crawl execution.
+\item Engineered a custom PageRank workflow on an HPC cluster, enabling large-scale computations with monitoring via FastAPI.
+\end{itemize}}
+
+\cventry{}{MSIT-Hotel-Booking \projectlink{https://denkraum1886.vercel.app}{Live}\projectlink{https://github.com/D3prave/MSIT-Hotel-Booking}{Code}}{}{}{}{%
+\begin{itemize}
+\item Built a bilingual hotel booking platform with customer and admin flows for a bleisure-focused property concept.
+\item Implemented booking lifecycle management, waitlist handling, and stay-management flows.
+\item Developed dashboard views for occupancy and revenue tracking.
+\item Used Next.js, React, TypeScript, Supabase, and PostgreSQL with row-level security.
+\end{itemize}}
+
+\cventry{}{Personal Portfolio Website \projectlink{https://portfolio.jakub-wisniewski.workers.dev}{Live}\projectlink{https://github.com/D3prave/personal-portfolio}{Code}}{}{}{}{%
+\begin{itemize}
+\item Designed and built a personal portfolio website to present experience, projects, technical skills, and a downloadable CV.
+\item Developed a responsive single-page frontend with React, TypeScript, and Vite using reusable, content-driven components.
+\item Structured the site around maintainable project, skills, and experience sections for a polished developer-facing presentation.
+\end{itemize}}
+
+\cventry{}{KULTour \projectlink{https://github.com/D3prave/KULTour}{Code}}{Hackathon Winner (Best Open Source)}{}{}{%
+\begin{itemize}
+\item Built a travel recommendation app in a 24h hackathon (Tourism Technology Festival, Salzburg).
+\item Implemented an ML-based recommendation approach for tourism personalization.
+\item Built an interactive map UI for route and point-of-interest exploration.
+\end{itemize}}
+
+%----------------------------------------------------------------------------------------
+\needspace{2\baselineskip}
+\section{Activities \& Involvement}
+\cventry{}{Data Science Student Council}{}{}{}{%
+\begin{itemize}
+\item Contribute to student representation and communication around program-related topics.
+\item Help organize student events and support council activities within the program.
+\end{itemize}}
+
+%----------------------------------------------------------------------------------------
+\section{Languages}
+\cvitem{Languages}{%
+  \textbf{Polish} (Native) \quad\textbullet\quad
+  \textbf{English} (C1) \quad\textbullet\quad
+  \textbf{German} (A2)%
+}
+
+\end{document}
