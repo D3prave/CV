@@ -28,7 +28,7 @@
 \colorlet{pictureframecolor}{color1}
 
 % Margins
-\usepackage[scale=0.95, top=0.9cm, bottom=1.7cm, footskip=20pt, includefoot]{geometry}
+\usepackage[scale=0.95, top=0.9cm, bottom=1.7cm, footskip=70pt, includefoot]{geometry}
 \usepackage{fontawesome5}
 \usepackage{etoolbox}
 \usepackage{needspace}
@@ -99,17 +99,17 @@
 %----------------------------------------------------------------------------------------
 \begin{document}
 \makecvtitle
-\vspace*{-1.1cm}
+\vspace*{-1.7cm}
 
 %----------------------------------------------------------------------------------------
 \needspace{3\baselineskip}
 \section{Profile}
-\cvitem{}{Backend-focused M.Sc. AI student with a Data Science background and experience in enterprise application portfolio \mbox{governance}, web crawling, research computing, and data-intensive software systems. Strong interests include backend engineering, RAG/analytics pipelines, and practical machine learning.}
+\cvitem{}{Backend-focused M.Sc. AI student with experience in enterprise application portfolio \mbox{governance}, web crawling, research computing, and data-intensive software systems. Strong interests include backend engineering, RAG/analytics pipelines, and practical machine learning.}
 
 %----------------------------------------------------------------------------------------
 \section{Education}
 \cventry{10/2026--Present}{M.Sc. Artificial Intelligence}{Friedrich-Alexander-Universität Erlangen-Nürnberg}{Erlangen}{}{}
-\cventry{2023--09/2026}{Bachelor of Data Science}{Katholische Universität Eichstätt-Ingolstadt}{Ingolstadt}{}{Thesis: Detecting Hallucinations in Large Language Models Using Semantic Entropy \projectlink{https://github.com/D3prave/thesis}{Code}}
+\cventry{2023--09/2026}{Bachelor of Data Science}{Katholische Universität Eichstätt-Ingolstadt}{Ingolstadt}{}{}
 \cventry{2019--2023}{IT Specialist}{Mikołaj Kopernik Telecommunications Technical School}{Poznań}{}{}
 
 %----------------------------------------------------------------------------------------
@@ -144,7 +144,7 @@
 \section{Skills}
 \cvitem{Programming}{Python, TypeScript, SQL, JavaScript}
 \cvitem{Web}{React, Next.js, Node.js, FastAPI, Flask, REST APIs}
-\cvitem{Data \& ML}{Pandas, NumPy, Scikit-learn, SciPy, Machine Learning, Model Evaluation, Matplotlib, Seaborn, Plotly}
+\cvitem{Data \& ML}{Pandas, NumPy, Scikit-learn, SciPy, Model Evaluation, Matplotlib, Seaborn, Plotly}
 \cvitem{Pipelines}{Web Scraping, RAG Data Pipelines, BeautifulSoup, lxml, Playwright, SQLite, pytest, CLI Tooling, PDF/OCR Processing, AnythingLLM}
 \cvitem{Enterprise}{Application Portfolio Management}
 \cvitem{Data \& Tools}{PostgreSQL, SQL Server, Redis, Docker, AWS, Azure DevOps, HPC (SLURM), PowerBI, ETL Pipelines, Data Warehousing}
@@ -154,6 +154,11 @@
 %----------------------------------------------------------------------------------------
 \needspace{3\baselineskip}
 \section{Projects}
+
+\cventry{}{Detecting Hallucinations in Large Language Models Using Semantic Entropy \projectlink{https://github.com/D3prave/thesis}{Code}}{}{}{}{%
+\begin{itemize}
+\item Bachelor's thesis comparing semantic entropy with simpler uncertainty scores on three open LLMs.
+\end{itemize}}
 
 \cventry{}{PageRank-Based Analysis of Scientific Papers \projectlink{https://github.com/D3prave/DataLab-PageRank}{Code}}{}{}{}{%
 \begin{itemize}
